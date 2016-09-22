@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>display:blox 旧版本的FLexbox模型的基本使用 兼容safari浏览器 -- 伸缩行换行</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body>div{
+            border:1px solid #ccc;
+            margin: 20px;
+            padding:10px;
+        }
+        div>div{
+            border:1px solid #f36;
+            padding: 10px;
+        }
+
+        .box{
+            display: -moz-box;
+            display: -webkit-box;
+            display: box;
+
+            -moz-box-pack: start;
+            -webkit-box-pack: start;
+            box-pack:start;
+            -moz-box-align:start;
+            -webkit-box-align:start;
+            box-align:start;
+            -moz-box-lines:multiple;
+            -webkit-box-lines:multiple;
+            box-lines:multiple;
+        }
+
+        .box-horizontal{
+            -moz-box-orient:horizontal;
+            -webkit-box-orient:horizontal;
+            box-orient:horizontal;
+        }
+
+        .box-vertical{
+            -moz-box-orient:vertical;
+            -webkit-box-orient:vertical;
+            box-orient:vertical;
+        }
+        .clear{
+            zoom: 1;
+        }
+        .clear:after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box-horizontal">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>I</div>
+        <div>J</div>
+        <div>K</div>
+    </div>
+    <p class="clear"></p>
+    <div class="box box-vertical">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>I</div>
+        <div>J</div>
+        <div>K</div>
+    </div>
+</body>
+</html>

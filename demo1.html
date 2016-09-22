@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>display:blox 旧版本的FLexbox模型的基本使用 兼容safari浏览器 -- 将容器设置为伸缩容器</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body>div{
+            border:1px solid #ccc;
+            margin: 20px;
+            padding:10px;
+        }
+        div>div{
+            border:1px solid #f36;
+            width:100px;
+            height:100px;
+            text-align: center;
+            line-height:100px;
+        }
+        /*display:box | inline-box 将容器设置为伸缩容器*/
+        .box{
+            display: -moz-box;/*firefox浏览器可用  效果与inline-box一样*/
+            display: -webkit-box; /*safari浏览器中有用*/
+            display: box;
+        }
+        .inline-box{
+            display: -moz-inline-box;/*firefox浏览器可用  效果与box一样*/
+            display: -webkit-inline-box;/*safari浏览器中有用*/
+            display: inline-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+
+    <div class="inline-box">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+</body>
+</html>

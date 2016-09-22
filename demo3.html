@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>display:blox 旧版本的FLexbox模型的基本使用 兼容safari浏览器 -- 伸缩布局顺序</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body>div{
+            border:1px solid #ccc;
+            margin: 20px;
+            padding:10px;
+        }
+        div>div{
+            border:1px solid #f36;
+            padding: 10px;
+        }
+        /*display:box | inline-box 将容器设置为伸缩容器*/
+        .box{
+            display: -moz-box;/*firefox浏览器可用  效果与inline-box一样*/
+            display: -webkit-box; /*safari浏览器中有用*/
+            display: box;
+        }
+        /*.inline-box{*/
+            /*display: -moz-inline-box;!*firefox浏览器可用  效果与box一样*!*/
+            /*display: -webkit-inline-box;!*safari浏览器中有用*!*/
+            /*display: inline-box;*/
+        /*}*/
+
+        .box-horizontal{
+            -moz-box-orient:horizontal;
+            -webkit-box-orient:horizontal;
+            box-orient:horizontal;
+        }
+
+        .box-vertical{
+            -moz-box-orient:vertical;
+            -webkit-box-orient:vertical;
+            box-orient:vertical;
+        }
+
+        /*.box-inline-axis{*/
+            /*-moz-box-orient:inline-axis;*/
+            /*-webkit-box-orient:inline-axis;*/
+            /*box-orient:inline-axis;*/
+        /*}*/
+
+        /*.box-block-axis{*/
+            /*-moz-box-orient:block-axis;*/
+            /*-webkit-box-orient:block-axis;*/
+            /*box-orient:block-axis;*/
+        /*}*/
+        .box-direction-reverse {
+            -moz-box-direction: reverse;/**/
+            -webkit-box-direction: reverse;/*反向显示*/反向显示
+            box-direction: reverse;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box-horizontal">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+
+    <div class="box box-horizontal box-direction-reverse">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+
+    <div class="box box-vertical">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+
+    <div class="box box-vertical  box-direction-reverse">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+</body>
+</html>
